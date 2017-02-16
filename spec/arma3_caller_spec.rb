@@ -5,7 +5,9 @@ describe Arma3Caller do
     expect(Arma3Caller::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it "Do a request..." do
+    a = Arma3Caller::Query.new("164.132.203.27", 2303)
+    a.open
+    a.server_info
   end
 end
