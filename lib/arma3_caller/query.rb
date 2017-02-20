@@ -23,15 +23,17 @@ module Arma3Caller
 
     private
 
-    def get_challenge
+    def get_challenge(_type)
       command = "\xFF\xFF\xFF\xFF\x55\xFF\xFF\xFF\xFF"
+      pack_array = ["\xFF\xFF\xFF\xFF", _type, "\xFF\xFF\xFF\xFF" ]
+      command = pack_array.pack('a4aa4')
       resp = self.ask(command)
       data = resp[0].unpack('@4aa*')
       return data[1]
     end
 
     def make_commandwchallenge(_command)
-      pack_array = ["\xFF\xFF\xFF\xFF",_command, get_challenge]
+      pack_array = ["\xFF\xFF\xFF\xFF",_command, get_challenge(_command)]
       command = pack_array.pack('a4aa4')
       return command
     end

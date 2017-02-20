@@ -20,9 +20,11 @@ module Arma3Caller
 
     def ask(a_cmd)
       @socket.send(a_cmd,0,@ip,@port)
-      resp = if select([@socket], nil, nil, TIME_OUT)
-               @socket.recvfrom(6000)
-             end
+      if select([@socket], nil, nil, TIME_OUT)
+        return @socket.recvfrom(6000)
+      else
+        return nil
+      end
     end
 
   end
