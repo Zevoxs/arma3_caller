@@ -10,7 +10,10 @@ module Arma3Caller
     def server_info
       command = "\xFF\xFF\xFF\xFFTSource Engine Query\x00"
       resp = self.ask(command)
-      puts resp.inspect
+      a = A2S_INFO_protocol.read(resp[0])
+      return a
+
+
     end
   end
 end
