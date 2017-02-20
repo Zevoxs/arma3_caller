@@ -17,7 +17,8 @@ module Arma3Caller
     def server_players
       command = make_commandwchallenge("\x55")
       resp = self.ask(command)
-      puts resp[0].inspect
+      data = A2S_PLAYER_protocol.read(resp[0])
+      return data
     end
 
     private

@@ -21,5 +21,21 @@ module Arma3Caller
     stringz :serverVersion
   end
 
+  class A2S_PLAYER_protocol < BinData::Record
+    string  length: 4
+    string :header , length: 1
+    uint8 :playersCount
+    i = 0
+    array :players, initial_length: :playersCount do
+      uint8
+      stringz :name
+      int32le :score
+      float_le :duration
+    end
+
+
+
+
+  end
 
 end

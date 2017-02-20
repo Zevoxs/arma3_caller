@@ -24,7 +24,9 @@ describe Arma3Caller do
     a = Arma3Caller::Query.new(myServer, myPort)
     puts "Make request ... "
     a.open
-    puts a.server_players
+    b = a.server_players
+    puts b
+    puts b.players.count
   end
 
 end
