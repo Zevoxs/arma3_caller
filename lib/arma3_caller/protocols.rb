@@ -3,7 +3,9 @@ require 'bindata'
 module Arma3Caller
 
   class A2S_INFO_protocol < BinData::Record
-    string  length: 6
+    string  length: 4
+    string :header , length: 1
+    string  length: 1
     stringz :serverName
     stringz :serverMap
     stringz :serverGame
@@ -17,7 +19,7 @@ module Arma3Caller
     uint8 :serverVisibility
     uint8 :serverVAC
     stringz :serverVersion
-
   end
+
 
 end
