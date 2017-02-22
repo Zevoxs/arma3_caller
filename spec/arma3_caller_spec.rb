@@ -5,8 +5,8 @@ describe Arma3Caller do
     expect(Arma3Caller::VERSION).not_to be nil
   end
 
-  my_server =  "213.32.6.62"
-  my_port = 2303 #2303
+  my_server =  "151.80.98.60"
+  my_port = 2303 #233
   it "Use this data" do
     puts "[CONFIG] IP_ADDRESS = #{my_server}"
     puts "[CONFIG] PORT = #{my_port}"
@@ -17,7 +17,9 @@ describe Arma3Caller do
     puts "Make request ... "
     a.open
     expect(a.server_info).not_to be nil
+    puts a.server_info
     a.close
+    puts 3368176641.to_s(16)
   end
 
   it "PLAYER_LIST request with QUERY class" do

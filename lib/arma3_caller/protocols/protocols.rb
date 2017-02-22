@@ -1,11 +1,16 @@
 require 'bindata'
 
+require "arma3_caller/protocols/rules_protocol"
+
 module Arma3Caller
+
+
+
 
   class A2S_INFO_protocol < BinData::Record
     string  length: 4
     string :header , length: 1
-    string  length: 1
+    int8le :protocol_version,  length: 1
     stringz :server_name
     stringz :server_map
     stringz :server_game
@@ -33,26 +38,5 @@ module Arma3Caller
     end
   end
 
-  class A2S_RULES_protocol < BinData::Record
-    string  length: 4
-    string :header , length: 1
-    string :test, length: 100
-
-
-    bit8 :rules_protocol_version
-    bit8 :overflow
-    bit8 :dlc_bit
-    bit8 :reserved
-    bit3 :difficulty_level
-    bit3 :difficulty_ai
-    bit1 :advanced_flight_mode
-    bit1 :t3rd_person
-    bit1 :crosshair
-    bit7
-
-
-
-
-  end
 
 end

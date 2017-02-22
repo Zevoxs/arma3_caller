@@ -22,13 +22,10 @@ module Arma3Caller
     end
 
     def server_rules
-      command = make_commandwchallenge("\x56")
+      command =  make_commandwchallenge("\x56")
       resp = self.ask(command)
-      modif = resp[0].gsub("\x01\x01", "\x01").gsub("\x01\x02","\x00").gsub( "\x01\x03", "\xFF")
-      puts modif.inspect
-      data = A2S_RULES_protocol.read(modif)
-      puts data
-      return data
+      process_rules(resp[0])
+
     end
 
     private
@@ -46,6 +43,7 @@ module Arma3Caller
       command = pack_array.pack('a4aa4')
       return command
     end
+
 
   end
 end
