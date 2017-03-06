@@ -22,7 +22,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Commands : 
+> Get server basic informations
+
+
+    serverInfosArray = myServer.server_info 
+> puts serverInfosArray => `{:header=>"I", :protocol_version=>17, :server_name=>"[RU] teste Altis Life |www.genp.ru| +Addons", :server_map=>"Altis", :server_game=>"Arma3", :server_description=>"Altis Life RPG ", :server_api=>0, :players_connected=>77, :max_players=>150, :bots_ingam
+                            e=>0, :server_type=>"d", :server_environment=>"w", :server_visibility=>0, :server_vac=>0, :server_version=>"1.66.139586"}
+`
+
+
 
 ## Development
 
