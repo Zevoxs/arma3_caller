@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Make calls to Arma 3 servers"
   spec.description   = ""
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/Zevoxs/arma3_caller"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency 'bindata'
+  spec.add_runtime_dependency "bindata", "~> 2.3"
 
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
