@@ -1,6 +1,5 @@
 module Arma3Caller
   class Query
-
     include Connection
 
     def initialize(a_address, a_port = 2302)
@@ -11,21 +10,20 @@ module Arma3Caller
       command = "\xFF\xFF\xFF\xFFTSource Engine Query\x00"
       resp = self.ask(command)
       info = A2S_INFO_protocol.read(resp[0])
-        return info
+        return info.snapshot
     end
 
     def server_players
       command = make_commandwchallenge("\x55")
       resp = self.ask(command)
       data = A2S_PLAYER_protocol.read(resp[0])
-      return data
+      return data.snapshot
     end
 
     def server_rules
       command =  make_commandwchallenge("\x56")
       resp = self.ask(command)
-      process_rules(resp[0])
-
+      process_rules(resp[0]).snapshot
     end
 
     private
