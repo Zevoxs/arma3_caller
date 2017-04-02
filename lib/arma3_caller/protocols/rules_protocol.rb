@@ -64,11 +64,9 @@ module Arma3Caller
     #
     # En deux parties car je ne connais pas encore le nombre de dlc dont il faut trouver le hash
     def process_rules(_data)
-      puts _data.inspect
       data = _data.gsub("\x01\x02","\x00").gsub( "\x01\x03", "\xFF".force_encoding('ASCII-8BIT')).gsub("\x01\x01", "\x01")
-      puts data.inspect
        data = A2S_RULES_protocol.read(data)
-       puts data
+      data
 
     end
   end
