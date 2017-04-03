@@ -39,4 +39,24 @@ module Arma3Caller
   end
 
 
+  # // RCON PACKETS
+
+  class RC_O_login_protocol < BinData::Record
+    string :header_be, length: 2
+    uint32le :header_checksum
+
+    string :thebegin, length: 2
+    string :password
+  end
+
+  class RC_I_login_protocol < BinData::Record
+    string :header_be, length: 2
+    uint32le :header_checksum
+
+    string :thebegin, length: 2
+    string :authResp, length:1
+  end
+
+
+
 end

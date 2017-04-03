@@ -1,6 +1,7 @@
 require "arma3_caller/version"
 require "arma3_caller/connection"
 require "arma3_caller/query"
+require "arma3_caller/rcon"
 require "arma3_caller/protocols/protocols"
 
 

@@ -6,7 +6,7 @@ describe Arma3Caller do
     expect(Arma3Caller::VERSION).not_to be nil
   end
 
-  my_server =  "151.80.98.60"
+  my_server =  "217.198.137.196"
   my_port = 2303 #233
   it "Use this data" do
     puts "[CONFIG] IP_ADDRESS = #{my_server}"
@@ -39,4 +39,15 @@ describe Arma3Caller do
     a.close
   end
 
+
+  it "RCON LOGIN request with RCON class" do
+    a = Arma3Caller::Rcon.new("217.198.137.196", 2305)
+    a.open
+
+    puts a.canConnect?("UMtT30uz")
+
+
+    a.close
+
+  end
 end

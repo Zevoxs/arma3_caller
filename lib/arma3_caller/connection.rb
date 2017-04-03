@@ -3,9 +3,9 @@ require 'socket'
 module Arma3Caller
   module Connection
 
-    TIME_OUT = 3
+    TIME_OUT = 1
 
-    def initialize (a_address, a_port = 2302)
+    def initialize (a_address, a_port)
       @ip = a_address
       @port = a_port
     end
@@ -26,6 +26,5 @@ module Arma3Caller
         return nil
       end
     end
-
   end
 end
